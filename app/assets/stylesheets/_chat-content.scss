@@ -2,11 +2,11 @@
   padding-right: 40px;
   padding-left: 40px;
   height: calc( 100vh - 15% - 90px);
-  .chat__content-message-list{
+  &-message-list{
     padding-top: 46px;
     .chat__content-message{
       margin-bottom: 40px;
-      .chat__content-message-name{
+      &-name{
         font-size: 16px;
         font-weight: bold;
         color: #434a54;
@@ -17,7 +17,7 @@
           margin-left: 10px;
         }
       }
-      .chat__content--message-body{
+      &-body{
         font-size: 14px;
         color: #434a54;
         margin-top: 10px;
