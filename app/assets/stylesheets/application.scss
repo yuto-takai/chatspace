@@ -1,0 +1,13 @@
+@import "./reset";
+@import "font-awesome";
+.flash-message{
+  background-color: #38aef0;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+}
+.container{
+  display: flex;
+  @import "./sidebar";
+  @import "./chat"
+}

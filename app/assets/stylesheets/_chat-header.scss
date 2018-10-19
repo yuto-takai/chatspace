@@ -1,0 +1,31 @@
+.chat__header{
+  display: flex;
+  height: 15%;
+  border-bottom: 1px solid #eeeeee;
+  justify-content: space-between;
+  padding-right: 40px;
+  padding-left: 40px;
+  .chat__header-group-info{
+    .chat__header-group-title{
+      font-size: 20px;
+      color: #333333;
+      margin-top:35px;
+      margin-bottom:15px;
+    }
+    .chat__header-group-member{
+      font-size: 12px;
+      color: #999999;
+    }
+  }
+  .chat__header-edit-button{
+    color: #38aef0;
+    height: 38px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    border: 1px solid #38aef0;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 28px;
+  }
+}
