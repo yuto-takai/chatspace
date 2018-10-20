@@ -1,0 +1,9 @@
+@import "./reset";
+@import "font-awesome";
+@import "./flash";
+
+.container{
+  display: flex;
+  @import "./sidebar";
+  @import "./chat"
+}

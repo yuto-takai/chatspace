@@ -1,0 +1,41 @@
+.chat__footer{
+  height: 90px;
+  background-color: #bdbdbd;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  &-form{
+    position: relative;
+    .upload-label{
+      position: absolute;
+            // メッセージ入力欄の幅 - アイコンの横幅
+      left: calc( 100vw - 300px - 80px - 15px - 100px - 17.16px);
+      // アイコンの高さをメッセージ入力欄と合わせ、フッターのpadding分持ち上げる
+      bottom: 20px;
+      line-height: 50px;
+    }
+    .message{
+      height: 50px;
+      border-style: none;
+      background-color: #ffffff;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-left: 10px;
+// 全体の幅 - サイドバーの幅 - チャット部分のpadding - Sendボタンとの間隔 - Sendボタンの幅
+      width: calc( 100vw - 300px - 80px - 15px - 100px);
+    }
+    #upload-icon{
+      display: none;
+    }
+  }
+  &-send-button{
+    background-color:#38aef0;
+    height: 50px;
+    width: 100px;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,46 @@
+%p.flash-message チャットグループが作成されました。
+.container
+  .sidebar
+    .sidebar__user
+      .sidebar__user-content
+        %p.sidebar__user-name
+          テストユーザー
+        .sidebar__user-menu-icon
+          %a.sidebar__user-create-group{href: ""}
+            = fa_icon "edit",class: 'icon'
+          %a.sidebar__user-edit-user{href: ""}
+            = fa_icon "cog",class: 'icon'
+    .sidebar__group
+      .sidebar__group-list
+        %a
+          .sidebar__group-info
+            %p.sidebar__group-name
+              テストグループ
+            %p.sidebar__group-message
+              テスト
+  .chat
+    .chat__header
+      .chat__header-group-info
+        %p.chat__header-group-title
+          テストグループ
+        %p.chat__header-group-member
+          テストグループ:テストユーザー
+      %a.chat__header-edit-button
+        Edit
+    .chat__content
+      .chat__content-message-list
+        .chat__content-message
+          %p.chat__content-message-name
+            テストユーザー
+            %span.chat__content-message-time
+              2018/10/17 00:00:00
+          %p.chat__content-message-body
+            テスト
+    .chat__footer
+      .chat__footer-form
+        %input.message{ placeholder: "type a message", type: "text"}
+        %label.upload-label{for: "upload-icon"}
+          = fa_icon "picture-o",class: 'send-icon'
+          %input{ type: "file", id: "upload-icon"}
+      %input.chat__footer-send-button{ type: "submit", value: "Send"}
+
