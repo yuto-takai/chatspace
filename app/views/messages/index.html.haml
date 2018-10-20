@@ -7,9 +7,9 @@
           テストユーザー
         .sidebar__user-menu-icon
           %a.sidebar__user-create-group{href: ""}
-            %i.fa.fa-pencil-square-o
+            = fa_icon "edit",class: 'icon'
           %a.sidebar__user-edit-user{href: ""}
-            %i.fa.fa-cog
+            = fa_icon "cog",class: 'icon'
     .sidebar__group
       .sidebar__group-list
         %a
@@ -40,7 +40,7 @@
       .chat__footer-form
         %input.message{ placeholder: "type a message", type: "text"}
         %label.upload-label{for: "upload-icon"}
-          %i.fa.fa-picture-o
+          = fa_icon "picture-o",class: 'send-icon'
           %input{ type: "file", id: "upload-icon"}
       %input.chat__footer-send-button{ type: "submit", value: "Send"}
 
