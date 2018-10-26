@@ -19,10 +19,10 @@
           %p.chat__content-message-body
             テスト
     .chat__footer
-      .chat__footer-form
-        %input.message{ placeholder: "type a message", type: "text"}
-        %label.upload-label{for: "upload-icon"}
-          = fa_icon "picture-o",class: 'send-icon'
-          %input{ type: "file", id: "upload-icon"}
-      %input.chat__footer-send-button{ type: "submit", value: "Send"}
-
+      .form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          = f.label :image, class: 'upload-label' do
+            = fa_icon 'picture-o', class: 'send-icon'
+            = f.file_field :image, class: 'upload-icon'
+          = f.submit 'Send', class: 'form__submit'
