@@ -44,6 +44,7 @@ $(function(){
     })
     .fail(function(data){
       alert('メッセージを送信できませんでした')
+      $(".form__submit").removeAttr("disabled");
     })
   })
 });
