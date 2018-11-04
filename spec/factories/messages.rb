@@ -1,5 +1,5 @@
-FactoryGirl.define do
-  factory :user do
+FactoryBot.define do
+  factory :message do
     password = Faker::Internet.password(8)
     name Faker::Name.last_name
     email Faker::Internet.free_email
