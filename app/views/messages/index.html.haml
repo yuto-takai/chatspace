@@ -20,7 +20,7 @@
             テスト
     .chat__footer
       .form
-        = form_for [@group, @message] do |f|
+        = form_for [@group, @message], html: {id: 'new__message'} do |f|
           = f.text_field :content, class: 'form__message', placeholder: 'type a message'
           = f.label :image, class: 'upload-label' do
             = fa_icon 'picture-o', class: 'send-icon'
