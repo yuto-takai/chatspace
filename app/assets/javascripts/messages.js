@@ -38,13 +38,14 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat__content-message-list').append(html)
-      $('.form__message').val('')
       $('.chat__content-message-list').animate({scrollTop: $('.chat__content-message-list')[0].scrollHeight}, 'slow','swing');
-      $(".form__submit").removeAttr("disabled");
     })
-    .fail(function(data){
+    .fail(function(){
       alert('メッセージを送信できませんでした')
+    })
+    .always(function(){
       $(".form__submit").removeAttr("disabled");
+      $('.form__message').val('')
     })
   })
 });
