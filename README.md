@@ -23,7 +23,7 @@
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
+|content|string||
 |image|string||
 |group|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
@@ -32,7 +32,7 @@
 - belongs_to :user
 - belongs_to :group
 
-## membersテーブル
+## group_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
