@@ -1,5 +1,13 @@
 $(function(){
   function buildHTML(message){
+
+    if((message.image) != null){
+      var image = `<img src= ${message.image}>`
+    }
+    else{
+      var image = ``
+    }
+
     var html = ` <div class= "chat__content-message">
                   <p class ="chat__content-message-name">
                     ${message.user_name}
@@ -8,6 +16,9 @@ $(function(){
                   <p class= "chat__content-message-body">
                     ${message.content}
                   </p>
+                  <div>
+                    ${image}
+                  </div>
                 </div>`
 
     return html;
@@ -29,6 +40,7 @@ $(function(){
       $('.chat__content-message-list').append(html)
       $('.form__message').val('')
       $('.chat__content-message-list').animate({scrollTop: $('.chat__content-message-list')[0].scrollHeight}, 'slow','swing');
+      $(".form__submit").removeAttr("disabled");
     })
     .fail(function(data){
       alert('メッセージを送信できませんでした')
