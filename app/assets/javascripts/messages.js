@@ -1,5 +1,13 @@
 $(function(){
   function buildHTML(message){
+    var image = (message.image) ? `<img src= ${message.image}>` : ``
+    // if((message.image) != null){
+    //   var image = `<img src= ${message.image}>`
+    // }
+    // else{
+    //   var image = ``
+    // }
+
     var html = ` <div class= "chat__content-message">
                   <p class ="chat__content-message-name">
                     ${message.user_name}
@@ -8,6 +16,9 @@ $(function(){
                   <p class= "chat__content-message-body">
                     ${message.content}
                   </p>
+                  <div>
+                    ${image}
+                  </div>
                 </div>`
 
     return html;
@@ -27,11 +38,14 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat__content-message-list').append(html)
-      $('.form__message').val('')
       $('.chat__content-message-list').animate({scrollTop: $('.chat__content-message-list')[0].scrollHeight}, 'slow','swing');
     })
-    .fail(function(data){
+    .fail(function(){
       alert('メッセージを送信できませんでした')
+    })
+    .always(function(){
+      $(".form__submit").removeAttr("disabled");
+      $('.form__message').val('')
     })
   })
 });
