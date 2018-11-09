@@ -9,7 +9,7 @@
           MEMBER:
           - @group.users.each do |user|
             #{user.name}
-      %a.chat__header-edit-button
+      = link_to "edit", edit_group_path(id: @group.id), class: "chat__header-edit-button"
 
     .chat__content
       .chat__content-message-list
