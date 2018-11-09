@@ -3,7 +3,6 @@ class MessagesController < ApplicationController
 
 
   def index
-    @group 
     @message = Message.new
     @messages = @group.messages.includes(:user)
   end
