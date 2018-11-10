@@ -22,6 +22,8 @@
                 #{message.created_at}
             %p.chat__content-message-body
               #{message.content}
+            .image
+              %img{src: "#{message.image}"}
     .chat__footer
       .form
         = form_for [@group, @message], html: {id: 'new__message'} do |f|
