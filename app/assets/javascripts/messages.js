@@ -9,7 +9,7 @@ $(function(){
                   <p class= "chat__content-message-body">
                     ${message.content}
                   </p>
-                  <div>
+                  <div class= "image">
                     ${image}
                   </div>
                 </div>`
