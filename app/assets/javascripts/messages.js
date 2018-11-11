@@ -31,7 +31,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat__content-message-list').append(html)
-      $('.chat__content-message-list').animate({scrollTop: $('.chat__content-message-list')[0].scrollHeight}, 'slow','swing');
+      $('.chat__content').animate({scrollTop: $('.chat__content')[0].scrollHeight}, 'slow','swing');
     })
     .fail(function(){
       alert('メッセージを送信できませんでした')
