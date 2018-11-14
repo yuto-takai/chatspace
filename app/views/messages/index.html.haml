@@ -15,7 +15,7 @@
       .chat__content-message-list
 
         - @messages.each do |message|
-          .chat__content-message
+          .chat__content-message{ "data-message-id": "#{message.id}"}
             %p.chat__content-message-name
               #{message.user.name}
               %span.chat__content-message-time

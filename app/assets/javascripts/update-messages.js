@@ -1,7 +1,7 @@
-$(function(){
+setInterval(function() {
   function buildHTML(message){
     var image = (message.image) ? `<img src= ${message.image}>` : ``
-    var html = ` <div class= "chat__content-message">
+    var html = ` <div class= "chat__content-message" data-message-id= "${message.id}">
                   <p class ="chat__content-message-name">
                     ${message.user_name}
                     <span class= "chat__content-message-time">${message.created_at}</span>
@@ -16,29 +16,21 @@ $(function(){
 
     return html;
   }
-  $('#new__message').on('submit', function(e){
-    e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action');
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-    .done(function(data){
-      var html = buildHTML(data);
+
+  $.ajax({
+    url: location.href.json,
+    dataType: 'json'
+  })
+
+  .done(function(messages) {
+    var lastId = $()
+    messages.forEach(function(message) {
+      var html = buildHTML(message);
       $('.chat__content-message-list').append(html)
       $('.chat__content').animate({scrollTop: $('.chat__content')[0].scrollHeight}, 'slow','swing');
-    })
-    .fail(function(){
-      alert('メッセージを送信できませんでした')
-    })
-    .always(function(){
-      $(".form__submit").removeAttr("disabled");
-      $('.form__message').val('')
-    })
+    });
   })
-});
+  .fail(function() {
+    alert('自動更新に失敗しました');
+  });
+}, 1000 * 5);
