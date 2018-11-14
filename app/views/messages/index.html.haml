@@ -1,0 +1,34 @@
+.container
+  = render 'shared/side_bar'
+  .chat
+    .chat__header
+      .chat__header-group-info
+        %p.chat__header-group-title
+          #{@group.name}
+        %p.chat__header-group-member
+          MEMBER:
+          - @group.users.each do |user|
+            #{user.name}
+      = link_to "edit", edit_group_path(id: @group.id), class: "chat__header-edit-button"
+
+    .chat__content
+      .chat__content-message-list
+
+        - @messages.each do |message|
+          .chat__content-message
+            %p.chat__content-message-name
+              #{message.user.name}
+              %span.chat__content-message-time
+                #{message.created_at}
+            %p.chat__content-message-body
+              #{message.content}
+            .image
+              %img{src: "#{message.image}"}
+    .chat__footer
+      .form
+        = form_for [@group, @message], html: {id: 'new__message'} do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          = f.label :image, class: 'upload-label' do
+            = fa_icon 'picture-o', class: 'send-icon'
+            = f.file_field :image, class: 'upload-icon'
+          = f.submit 'Send', class: 'form__submit'
