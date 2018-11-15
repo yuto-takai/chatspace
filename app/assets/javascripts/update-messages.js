@@ -26,7 +26,6 @@ var interval = setInterval(function() {
     })
 
     .done(function(messages) {
-
       messages.forEach(function(message) {
         var html = buildHTML(message);
         $('.chat__content-message-list').append(html)
