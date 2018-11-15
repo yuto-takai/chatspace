@@ -1,0 +1,9 @@
+.chat__content-message{ "data-message-id": "#{message.id}"}
+  %p.chat__content-message-name
+    #{message.user.name}
+    %span.chat__content-message-time
+      #{message.created_at(:default)}
+  %p.chat__content-message-body
+    #{message.content}
+  .image
+    %img{src: "#{message.image}"}
