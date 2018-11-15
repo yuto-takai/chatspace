@@ -14,8 +14,7 @@
     .chat__content
       .chat__content-message-list
 
-        - @messages.each do |message|
-          = render "tweets", message: message
+        = render @messages
 
     .chat__footer
       .form
