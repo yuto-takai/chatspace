@@ -3,7 +3,7 @@ function buildHTML(message){
   var html = ` <div class= "chat__content-message" data-message-id= "${message.id}">
                 <p class ="chat__content-message-name">
                   ${message.user_name}
-                  <span class= "chat__content-message-time">${message.created_at}</span>
+                  <span class= "chat__content-message-time">${message.date}</span>
                 </p>
                 <p class= "chat__content-message-body">
                   ${message.content}
@@ -17,7 +17,7 @@ function buildHTML(message){
 }
 var interval = setInterval(function() {
   if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-    var lastMessageId = $('.chat__content-message:last').data('messageId')
+    var lastMessageId = $('.chat__content-message:last').data('messageId') || 0
 
     $.ajax({
       url: location.href.json,

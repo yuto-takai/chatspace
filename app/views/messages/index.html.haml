@@ -15,15 +15,8 @@
       .chat__content-message-list
 
         - @messages.each do |message|
-          .chat__content-message{ "data-message-id": "#{message.id}"}
-            %p.chat__content-message-name
-              #{message.user.name}
-              %span.chat__content-message-time
-                #{message.created_at}
-            %p.chat__content-message-body
-              #{message.content}
-            .image
-              %img{src: "#{message.image}"}
+          = render "tweets", message: message
+
     .chat__footer
       .form
         = form_for [@group, @message], html: {id: 'new__message'} do |f|
