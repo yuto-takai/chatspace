@@ -14,6 +14,7 @@
     .chat__content
       .chat__content-message-list
 
+<<<<<<< HEAD
         - @messages.each do |message|
           .chat__content-message{ "data-message-id": "#{message.id}"}
             %p.chat__content-message-name
@@ -24,6 +25,10 @@
               #{message.content}
             .image
               %img{src: "#{message.image}"}
+=======
+        = render @messages
+
+>>>>>>> f691a613aa351617b3ee9becec17ce3f286bf481
     .chat__footer
       .form
         = form_for [@group, @message], html: {id: 'new__message'} do |f|

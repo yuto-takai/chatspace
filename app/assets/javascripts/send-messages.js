@@ -1,10 +1,10 @@
 $(function(){
   function buildHTML(message){
     var image = (message.image) ? `<img src= ${message.image}>` : ``
-    var html = ` <div class= "chat__content-message">
+    var html = ` <div class= "chat__content-message" data-message-id= "${message.id}">
                   <p class ="chat__content-message-name">
                     ${message.user_name}
-                    <span class= "chat__content-message-time">${message.created_at}</span>
+                    <span class= "chat__content-message-time">${message.date}</span>
                   </p>
                   <p class= "chat__content-message-body">
                     ${message.content}
@@ -39,6 +39,6 @@ $(function(){
     .always(function(){
       $(".form__submit").removeAttr("disabled");
       $('.form__message').val('')
-    })
-  })
+    });
+  });
 });
