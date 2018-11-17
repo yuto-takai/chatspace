@@ -34,6 +34,9 @@
     .group {
       box-sizing: border-box;
       padding: 20px 0 40px;
+      &__link{
+        text-decoration: none;
+      }
       &__name {
         color: #ffffff;
         font-size: 15px;
