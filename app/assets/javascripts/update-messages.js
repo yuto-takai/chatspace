@@ -39,4 +39,4 @@ $(document).on('turbolinks:load', function() {
     } else {
     clearInterval(interval);
   }}, 1000 * 5);
-});
+})
