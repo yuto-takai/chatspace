@@ -1,10 +1,10 @@
 $(function(){
   function buildHTML(message){
     var image = (message.image) ? `<img src= ${message.image}>` : ``
-    var html = ` <div class= "chat__content-message">
+    var html = ` <div class= "chat__content-message" data-message-id= "${message.id}">
                   <p class ="chat__content-message-name">
                     ${message.user_name}
-                    <span class= "chat__content-message-time">${message.created_at}</span>
+                    <span class= "chat__content-message-time">${message.date}</span>
                   </p>
                   <p class= "chat__content-message-body">
                     ${message.content}
@@ -31,7 +31,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat__content-message-list').append(html)
-      $('.chat__content-message-list').animate({scrollTop: $('.chat__content-message-list')[0].scrollHeight}, 'slow','swing');
+      $('.chat__content').animate({scrollTop: $('.chat__content')[0].scrollHeight}, 'slow','swing');
     })
     .fail(function(){
       alert('メッセージを送信できませんでした')
@@ -39,6 +39,6 @@ $(function(){
     .always(function(){
       $(".form__submit").removeAttr("disabled");
       $('.form__message').val('')
-    })
-  })
+    });
+  });
 });
