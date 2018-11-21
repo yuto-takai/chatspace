@@ -1,4 +1,3 @@
-
 function buildHTML(message){
   var image = (message.image) ? `<img src= ${message.image}>` : ``
   var html = ` <div class= "chat__content-message" data-message-id="${message.id}">

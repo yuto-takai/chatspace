@@ -1,4 +1,3 @@
-
 $(function() {
 var search_list = $("#user-search-result");
 var group_users_list = $("#chat-group-users");
