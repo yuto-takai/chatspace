@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @group.users << current_user
+    # @group.users << current_user
   end
 
   def create
@@ -20,11 +20,12 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    if @group.update(group_params)
+    @group.update(group_params)
+    @group.users << current_user
+    if @group.save
       redirect_to group_messages_path(@group), notice: 'グループを編集しました'
     else
       render :edit

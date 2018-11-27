@@ -10,6 +10,13 @@ function appendUser(user) {
     search_list.append(html);
  }
 
+function appendNoUser(no_result) {
+  var html = `<div class="chat-group-user clearfix">
+                 <p class="chat-group-user__name">${no_result}</p>
+               </div>`
+   search_list.append(html);
+}
+
 function appendGroupUser(user_id, user_name) {
   var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                 <input name='group[user_ids][]' type='hidden' value='${user_id}'>
