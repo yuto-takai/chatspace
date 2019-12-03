@@ -4,5 +4,5 @@ set :output, 'log/crontab.log'
 set :environment, :production
 
 every 1.minute do
-  rake 'rake:sample_task:test'
+  rake 'sample_task:test'
 end
