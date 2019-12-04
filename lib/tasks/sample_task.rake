@@ -1,6 +1,6 @@
 namespace :sample_task do
   desc 'テスト用'
   task :test do
-    puts 'Hello, World'
+    Rails.logger.info('testtesttest')
   end
 end
