@@ -1,5 +1,6 @@
 server '3.115.216.187', user: 'ec2-user', roles: %w{app db web}
 server '13.112.229.143', user: 'ec2-user', roles: %w{app db web}
+server '18.176.244.80' user: 'ec2-user', roles: %{batch db}
 
 # server-based syntax
 # ======================
