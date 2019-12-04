@@ -1,6 +1,6 @@
 namespace :sample_task do
   desc 'テスト用'
   task :test do
-    puts 'Hello, World'
+    puts 'Hellooooooooooooooooooooo, World'
   end
 end
