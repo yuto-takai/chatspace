@@ -3,4 +3,9 @@ namespace :sample_task do
   task :test do
     puts 'Hellooooooooooooooooooooo, World'
   end
+
+  desc 'テスト2用'
+  task :test2 do
+    puts 'Hello, World'
+  end
 end

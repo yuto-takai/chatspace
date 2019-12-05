@@ -5,4 +5,5 @@ set :environment, :production
 
 every 1.minute do
   rake 'sample_task:test'
+  rake 'sample_task:test2'
 end
