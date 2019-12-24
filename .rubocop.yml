@@ -10,8 +10,7 @@ AllCops:
   DisplayCopNames: true
   TargetRubyVersion: 2.6.0
 
-Rails:
-  Enabled: true
+require: rubocop-rails
 
 Style/AndOr:
   EnforcedStyle: conditionals
