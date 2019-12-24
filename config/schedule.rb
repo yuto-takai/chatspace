@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # 出力先logの指定
 set :output, 'log/crontab.log'
 # 実行環境の指定

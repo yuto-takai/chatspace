@@ -1,4 +1,6 @@
-app_path = File.expand_path('../../../', __FILE__)
+# frozen_string_literal: true
+
+app_path = File.expand_path('../..', __dir__)
 worker_processes 2
 working_directory "#{app_path}/current"
 listen "#{app_path}/shared/tmp/sockets/unicorn.sock"

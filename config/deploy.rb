@@ -1,9 +1,11 @@
-# config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+# frozen_string_literal: true
 
-set :linked_files, %w{ config/secrets.yml }
+# config valid for current version and patch releases of Capistrano
+lock '~> 3.11.0'
+
+set :linked_files, %w[config/secrets.yml]
 set :application, 'chatspace'
-set :repo_url,  'git@github.com:takaikunoff/chatspace.git'
+set :repo_url, 'git@github.com:takaikunoff/chatspace.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
@@ -18,12 +20,11 @@ set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 set :whenever_roles, :batch
 
-set :default_env, {
-  rbenv_root: "/usr/local/rbenv",
-  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
-  # AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
-  # AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
-}
+set :default_env,
+    rbenv_root: '/usr/local/rbenv',
+    path: '/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH'
+# AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+# AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 
 set :whenever_environment, :production
 
@@ -35,7 +36,7 @@ namespace :deploy do
 
   desc 'upload secrets.yml'
   task :upload do
-    on roles(:app) do |host|
+    on roles(:app) do |_host|
       if test "[ ! -d #{shared_path}/config ]"
         execute "mkdir -p #{shared_path}/config"
       end

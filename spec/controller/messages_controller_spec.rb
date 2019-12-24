@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe MessagesController do
@@ -5,7 +7,6 @@ describe MessagesController do
   let(:user) { create(:user) }
 
   describe '#index' do
-
     context 'log in' do
       before do
         login user
@@ -16,11 +17,11 @@ describe MessagesController do
         expect(assigns(:message)).to be_a_new(Message)
       end
 
-      it 'assigns @group' do #before_actionでset_groupがあるので必要
+      it 'assigns @group' do # before_actionでset_groupがあるので必要
         expect(assigns(:group)).to eq group
       end
 
-      it 'renders index' do #response = index後の遷移先
+      it 'renders index' do # response = index後の遷移先
         expect(response).to render_template :index
       end
     end
@@ -45,13 +46,13 @@ describe MessagesController do
       end
 
       context 'can save' do
-        subject {
+        subject do
           post :create,
-          params: params
-        }
+               params: params
+        end
 
         it 'count up message' do
-          expect{ subject }.to change(Message, :count).by(1)
+          expect { subject }.to change(Message, :count).by(1)
         end
 
         it 'redirects to group_messages_path' do
@@ -63,13 +64,13 @@ describe MessagesController do
       context 'can not save' do
         let(:invalid_params) { { group_id: group.id, user_id: user.id, message: attributes_for(:message, content: nil, image: nil) } }
 
-        subject {
+        subject do
           post :create,
-          params: invalid_params
-        }
+               params: invalid_params
+        end
 
         it 'does not count up' do
-          expect{ subject }.not_to change(Message, :count)
+          expect { subject }.not_to change(Message, :count)
         end
 
         it 'renders index' do
@@ -80,7 +81,6 @@ describe MessagesController do
     end
 
     context 'not log in' do
-
       it 'redirects to new_user_session_path' do
         post :create, params: params
         expect(response).to redirect_to(new_user_session_path)

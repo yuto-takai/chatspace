@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :sample_task do
   desc 'テスト用'
   task :test do
