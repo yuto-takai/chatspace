@@ -35,11 +35,13 @@ jobs:
             sudo rm /usr/local/bin/bundle
             sudo rm /usr/local/bin/bundler
             sudo gem install bundler
+          no_output_timeout: 15m
 
       - run:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
+          no_output_timeout: 15m
 
       - save_cache:
           paths:
