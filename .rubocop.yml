@@ -1,4 +1,5 @@
 AllCops:
+  TargetRubyVersion: 2.5
   Exclude:
     - "tmp/**/*"
     - "config/initializers/*"
@@ -8,7 +9,6 @@ AllCops:
     - "db/migrate/*.rb"
     - "bin/*"
   DisplayCopNames: true
-  TargetRubyVersion: 2.4.0
 
 require: rubocop-rails
 
