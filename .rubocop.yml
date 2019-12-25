@@ -35,3 +35,21 @@ Lint/ShadowedException:
 
 Layout/LineLength:
   Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Rails/RakeEnvironment:
+  Enabled: false
+
+Lint/Syntax:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
