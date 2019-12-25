@@ -45,8 +45,5 @@ Rails/HasManyOrHasOneDependent:
 Rails/RakeEnvironment:
   Enabled: false
 
-Lint/Syntax:
-  Enabled: false
-
 Style/IfUnlessModifier:
   Enabled: false
