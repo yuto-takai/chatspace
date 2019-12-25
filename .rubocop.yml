@@ -42,9 +42,6 @@ Metrics/BlockLength:
 Rails/HasManyOrHasOneDependent:
   Enabled: false
 
-Style/IfUnlessModifier:
-  Enabled: false
-
 Rails/RakeEnvironment:
   Enabled: false
 
