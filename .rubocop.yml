@@ -47,3 +47,6 @@ Rails/RakeEnvironment:
 
 Style/IfUnlessModifier:
   Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
