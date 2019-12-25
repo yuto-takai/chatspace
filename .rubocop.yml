@@ -32,3 +32,6 @@ Bundler/OrderedGems:
 
 Lint/ShadowedException:
   Enabled: false
+
+Layout/LineLength:
+  Enabled: false
