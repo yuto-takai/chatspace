@@ -10,7 +10,8 @@ jobs:
       - image: circleci/ruby:2.4.1-node-browsers
         environment:
           BUNDLER_VERSION: 2.0.1
-
+          DB_HOST: 127.0.0.1
+      - image: circleci/mysql:5.7
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -31,17 +32,14 @@ jobs:
           name: setup bundler
           command: |
             sudo gem update --system
-            sudo gem uninstall bundler
-            sudo rm /usr/local/bin/bundle
-            sudo rm /usr/local/bin/bundler
-            sudo gem install bundler
-          no_output_timeout: 15m
+            sudo gem install bundler -v '2.0.1'
+            sudo gem uninstall bundler -v '2.1.2'
 
       - run:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
-          no_output_timeout: 15m
+          no_output_timeout: 60m
 
       # Rubocop
       - run:

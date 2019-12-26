@@ -1,0 +1,55 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - "tmp/**/*"
+    - "config/initializers/*"
+    - "vendor/**/*"
+    - "db/schema.rb"
+    - "node_modules/**/*"
+    - "db/migrate/*.rb"
+    - "bin/*"
+  DisplayCopNames: true
+
+require: rubocop-rails
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Lint/ShadowedException:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/RakeEnvironment:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

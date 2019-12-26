@@ -1,6 +1,9 @@
-server '3.115.216.187', user: 'ec2-user', roles: %w{app db web}
-server '13.112.229.143', user: 'ec2-user', roles: %w{app db web}
-server '18.176.244.80',  user: 'ec2-user', roles: %{batch db}
+# frozen_string_literal: true
+
+server '3.115.216.187', user: 'ec2-user', roles: %w[app db web]
+server '13.112.229.143', user: 'ec2-user', roles: %w[app db web]
+server '18.176.244.80',  user: 'ec2-user', roles: %(batch db)
+# テスト用に適当なコメントを追加
 
 # server-based syntax
 # ======================
@@ -10,8 +13,6 @@ server '18.176.244.80',  user: 'ec2-user', roles: %{batch db}
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-
-
 
 # role-based syntax
 # ==================
@@ -25,8 +26,6 @@ server '18.176.244.80',  user: 'ec2-user', roles: %{batch db}
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-
-
 # Configuration
 # =============
 # You can set any configuration variable like in config/deploy.rb
@@ -34,8 +33,6 @@ server '18.176.244.80',  user: 'ec2-user', roles: %{batch db}
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-
-
 
 # Custom SSH Options
 # ==================

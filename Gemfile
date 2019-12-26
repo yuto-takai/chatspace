@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
@@ -18,6 +19,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+gem 'rspec_junit_formatter'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -35,12 +37,14 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'haml-rails'
 gem 'erb2haml'
-gem "font-awesome-rails"
-gem "devise"
+gem 'font-awesome-rails'
+gem 'devise'
 gem 'rails-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'rubocop'
+gem 'rubocop-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -70,7 +74,7 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'pry-rails'
 
 gem 'whenever', require: false
